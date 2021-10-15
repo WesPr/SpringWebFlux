@@ -3,7 +3,6 @@ package com.example.slassignment;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +21,7 @@ public class ItemHandler {
         items.put(3L, item3);
     }
 
+    //Rest
     public static List<Item> getAllItems() {
         return new ArrayList<>(items.values());
     }
@@ -30,6 +30,7 @@ public class ItemHandler {
         return items.get(id);
     }
 
+    //Reactive
     public Flux<Item> getItems() {
         return Flux.just(new Item(1L, "ReactItem1"),
                 new Item(2L, "ReactItem2"));
